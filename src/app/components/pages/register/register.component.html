@@ -1,0 +1,115 @@
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="card">
+            <div class="card-header bg-info text-center" style="color: Tomato;">
+                <h4> Customer Registration</h4>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="submit(formd)" #formd=ngForm >
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span style="color: Tomato;" class="input-group-text" id="fname"><fa-icon [icon]="faUser"></fa-icon></span>
+                                    <!-- <fa-icon [icon]="faUser"></fa-icon> -->
+                                    <input type="text" class="form-control" #efname="ngModel" [ngClass]="efname?.invalid && efname?.
+                                    touched? 'is-invalid': 'null'" [ngClass]="efname?.valid && efname?.
+                                    touched? 'is-valid': 'null'" placeholder="First Name" aria-describedby="fname"
+                                        name="fname" [(ngModel)]="formdata.fname" required>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <!-- <span class="input-group-text" id="lname">@</span> -->
+                                    <span style="color: Tomato;" class="input-group-text" id="fname"><fa-icon [icon]="faUser"></fa-icon></span>
+                                    <input type="text" class="form-control" #elname="ngModel" [ngClass]="elname?.invalid && elname?.
+                                    touched? 'is-invalid': 'null'" [ngClass]="elname?.valid && elname?.
+                                    touched? 'is-valid': 'null'" placeholder="Last Name" aria-describedby="lname"
+                                        name="lname" [(ngModel)]="formdata.lname" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <!-- <span class="input-group-text" id="email">@</span> -->
+                            <span style="color: Tomato;" class="input-group-text" id="fname"><fa-icon [icon]="faEnvelopeSquare"></fa-icon></span>
+                            <input type="email" class="form-control" placeholder="Enter Your Email"
+                                aria-describedby="email" #eemail=ngModel name="email" [(ngModel)]="formdata.email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"/>
+
+
+                        </div>
+                        <div class="text-danger" *ngIf="eemail.errors?.required && eemail.touched">Email required</div>
+
+                        <div class="text-danger" *ngIf="!eemail.errors?.required && eemail.touched && eemail?.invalid">Email Invalid</div>
+                     
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <!-- <span class="input-group-text" id="mobile">@</span> -->
+                            <span style="color: Tomato;" class="input-group-text" id="fname"><fa-icon [icon]="faMobile"></fa-icon></span>
+                            <input type="text" class="form-control" placeholder="Your Mobile Number" aria-describedby="mobile" #emobile=ngModel name="mobile" [(ngModel)]="formdata.mobile" required pattern="[789][0-9]{9}">
+                        </div>
+                        <div class="text-danger" *ngIf="emobile.errors?.required && emobile.touched">
+                            Mobile number required !
+                        </div>
+                        <div class="text-danger" *ngIf="!emobile.errors?.required && emobile.touched && emobile?.invalid">
+                            Mobile is not valid !
+                        </div>
+                      </div>
+                    
+                      <div class="form-group pt-3">
+                        <div class="input-group">
+                            <!-- <span class="input-group-text" id="pass">@</span> -->
+                            <span style="color: Tomato;" class="input-group-text" id="fname"><fa-icon [icon]="faLock"></fa-icon></span>
+                            <input type="password" #epass=ngModel class="form-control" placeholder="Your Password" aria-describedby="pass" name="password" [(ngModel)]="formdata.password" required pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\S+$).{6,}$">
+                        </div>
+    
+                        <div class="text-danger" *ngIf="epass.errors?.required && epass.touched">
+                            Password required
+                        </div>
+    
+                        <div class="text-danger" *ngIf="!epass.errors?.required && epass.touched && epass?.invalid">
+                            Password should be a-z && 0-9 min 6 char !
+                        </div>
+                      </div>
+                      
+
+                      <!-- <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="cpass">@</span>
+                            <input type="password" #ecpass=ngModel class="form-control" placeholder="Confirm Password" aria-describedby="cpass" name="confirmpassword" [(ngModel)]="formdata.confirmpassword" appConfirmpassword required>
+    
+                        </div>
+                        <div class="text-danger" *ngIf="ecpass.errors?.required && ecpass.touched">
+                           Confirm Password required
+                        </div>
+    
+                        <div class="text-danger" *ngIf="!ecpass.errors?.required && ecpass.touched && ecpass.errors?.passwordmatched">
+                            Confirm Password mismatched !
+                         </div>
+                      </div> -->
+
+                      <div class="form-group pt-3">
+                        <div class="input-group">
+                            <!-- <span class="input-group-text" id="email">@</span> -->
+                            <span style="color: Tomato;" class="input-group-text" id="photo"><fa-icon [icon]="faEnvelopeSquare"></fa-icon></span>
+                            <input type="file" class="form-control" placeholder="Upload photo"
+                                aria-describedby="email" #eemail=ngModel name="email" [(ngModel)]="formdata.photo" />
+                        </div>
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <input type="submit" value="submit" class="btn btn-success">
+                    </div>
+                    Already have an account? <a class="already" href="#" routerLink="/login">login</a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

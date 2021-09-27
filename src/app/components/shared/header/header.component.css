@@ -1,0 +1,19 @@
+.header{
+    height: 109px;
+    background-color: darkcyan;
+}
+.nav ul a {
+   padding: 12px;
+   /* background-color: darkgreen; */
+   color: #fff;
+   margin-left: 4px;
+   text-decoration: none;
+}
+.nav{
+    position: relative;
+    margin-left: 22%;
+    top: -80px;
+}
+.nav ul a:hover{
+    cursor: pointer;
+}

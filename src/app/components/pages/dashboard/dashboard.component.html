@@ -1,0 +1,46 @@
+
+
+
+<div class="sidenav">
+  <div class="form-control">
+    <img [src] = "src" class="img-circle">
+  </div>
+
+  <a href="" routerLink="order-menu">Show Orders</a>
+  <a href="" routerLink="order-now">Creat Orders</a>
+
+ <div class="box">
+  <a class="already" href="" routerLink="/register">Create New User</a>
+  <a class="already" href="" >Change Password</a>
+  <a class="already" href="" (click)="logout()">Logout<fa-icon [icon]="faSignOutAlt" style="color: rgb(7, 7, 7);"></fa-icon></a>
+  <!-- <button class="btn btn-success" (click)="logout()">Logout</button> -->
+  
+ </div>
+</div>
+
+
+
+<div class="main">
+  <div class="container"style="margin: 0; padding: 0;">
+    <div class="header">
+      <img [src]="src1" alt="angular-logo">
+  
+      <div class="nav">
+          <ul>
+              <!-- <a class="btn btn-danger"style="text-alignment:right">Welcome {{nn}}<a> -->
+                <a href="" >Welcome {{nn}}</a>
+                <fa-icon [icon]="faGrin" style="color: Tomato;"></fa-icon>
+          </ul>
+      </div>
+      <!-- <div class="btn btn-danger"style="text-alignment:right">Welcome {{nn}}</div> -->
+  </div>
+    <h4 style="background-color: azure;">Welcome to Admin Panel</h4>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+ 
