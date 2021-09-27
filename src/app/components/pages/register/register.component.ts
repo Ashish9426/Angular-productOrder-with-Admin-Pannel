@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     'password':'',
     // 'confirmpassword':'',
     // 'address':''
-    'photo':''
+    // 'photo':''
   }
   constructor(private _router:Router, private _toast:ToastrService) { }
 

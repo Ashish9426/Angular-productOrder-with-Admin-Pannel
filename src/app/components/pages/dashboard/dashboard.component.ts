@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   data:any
   pp:any
   nn:any
+  reader:any
   src = "pp"
   constructor(private _router:Router, private _toast:ToastrService) { 
     let record:any
@@ -33,15 +34,24 @@ export class DashboardComponent implements OnInit {
     console.log(f)
     console.log(l)
     console.log(p)
+    this.reader= p.toDataUrl
   
 
   }
 
   ngOnInit(): void {
-    
 
     }
 
+  onselectFile(e:any){
+    if(e.target.files){
+      var reader = new FileReader();
+      reader.readAsDataURL(e.target.files[0]);
+      reader.onload = (event:any)=>{
+        this.src = event.target.result;
+      }
+    }
+    }
 
   logout(){
     this._router.navigate(["/login"])
