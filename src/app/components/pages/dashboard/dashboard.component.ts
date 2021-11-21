@@ -33,8 +33,8 @@ export class DashboardComponent implements OnInit {
     this.pp = p
     console.log(f)
     console.log(l)
-    console.log(p)
-    this.reader= p.toDataUrl
+    // console.log(p)
+    // this.reader= p.toDataUrl
   
 
   }
@@ -43,15 +43,15 @@ export class DashboardComponent implements OnInit {
 
     }
 
-  onselectFile(e:any){
-    if(e.target.files){
-      var reader = new FileReader();
-      reader.readAsDataURL(e.target.files[0]);
-      reader.onload = (event:any)=>{
-        this.src = event.target.result;
-      }
-    }
-    }
+  // onselectFile(e:any){
+  //   if(e.target.files){
+  //     var reader = new FileReader();
+  //     reader.readAsDataURL(e.target.files[0]);
+  //     reader.onload = (event:any)=>{
+  //       this.src = event.target.result;
+  //     }
+  //   }
+  //   }
 
   logout(){
     this._router.navigate(["/login"])

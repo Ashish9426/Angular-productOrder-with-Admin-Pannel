@@ -36,13 +36,12 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(data:NgForm){
-    console.log(data)
-    console.log(data.control.value.fname)
+    // console.log(data)
+    // console.log(data.control.value.fname)
     localStorage.setItem("newUser", JSON.stringify(this.formdata))
 
     this._router.navigate(["/login"])
     this._toast.info("Successfully Registered","Thanks",{timeOut:5000})
-
 
 }
 }

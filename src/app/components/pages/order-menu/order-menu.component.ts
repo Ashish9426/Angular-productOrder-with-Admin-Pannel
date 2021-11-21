@@ -20,6 +20,7 @@ export class OrderMenuComponent implements OnInit {
   LoadOrder(){
     this._orderService.GetAllOrders().subscribe(r=>{
       //console.log(r)
+      console.log(typeof(r))
       this.orders=r;
     })
   }

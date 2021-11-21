@@ -49,12 +49,14 @@ export class LoginComponent implements OnInit {
     let user=this.formdata.value;
     // if(user.userid=="test@gmai.com" && user.password=="12345")
     if(user.userid==id && user.password==pass)
+
     {
      this._authoService.Authentication();
-      this._router.navigate(["/dashboard"])
+      this._router?.navigate(["/dashboard"])
       localStorage.setItem("newUser", JSON.stringify(this.formdata))
       this._toast.success("Successfully Signin","Thanks",{timeOut:5000})
     }
+
     else{
       this.errormessage="Invalid login id or password !"
       this._toast.warning("Failed to SignIn","warning",{timeOut:5000})
